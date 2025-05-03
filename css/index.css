@@ -1,0 +1,119 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f9fc;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.headline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004d66; /* Soft teal-blue */
+}
+
+/* Navigation */
+.nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #004d66;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #c78a00; /* Warm amber highlight */
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.main-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #004d66;
+}
+
+.intro {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #c78a00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e0a800;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav a {
+    margin: 0.3rem 0;
+  }
+}
