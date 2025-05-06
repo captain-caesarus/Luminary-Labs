@@ -10,10 +10,23 @@ class BaseModel:
     """ Defines all common attributes/methods for other classes."""
 
     def __init__(self):
-        """ Initializes a new instance with Unique ID and timestamps."""
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = self.created_at
+        """
+        Initializes a new instance with Unique ID and timestamps.
+        or recreates one from a dictionary.
+        """
+
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    continue
+                if key in ("created_at", "updated_at"):
+                    setattr(self, key, datetime.fromisoformat(value))
+                else:
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
 
     def __str__(self):
         """
