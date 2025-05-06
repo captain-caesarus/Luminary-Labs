@@ -9,7 +9,7 @@ from datetime import datetime
 class BaseModel:
     """ Defines all common attributes/methods for other classes."""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """
         Initializes a new instance with Unique ID and timestamps.
         or recreates one from a dictionary.
